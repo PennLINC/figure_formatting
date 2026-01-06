@@ -58,14 +58,13 @@ save_figure(p1, file.path(output_dir, "example_default_font.svg"),
             width_mm = width_mm, height_mm = height_mm)
 
 # ------------------------------------------------------------------------------------------------
-# Example 2: Multipanel figure (2x2 grid) with shared y axis
+# Example 2: Multipanel figure (2x2 grid)
 # ------------------------------------------------------------------------------------------------
 cat("Creating multipanel figure (2x2 grid)...\n")
 
 # Setup for multipanel figure
 width_mm <- 150
 height_mm <- 100
-sharey <- TRUE
 fig_setup_multi <- setup_figure(
   width_mm = width_mm,
   height_mm = height_mm,
