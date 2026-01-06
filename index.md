@@ -24,7 +24,7 @@ Summarized from slides by Golia Shafiei, Ph.D.
 4. Create the simplest graph that conveys the information you want to present
 5. Don’t overcomplicate figures—they are tools for understanding. Every bit of ink requires a reason.
 
-![Screenshot 2026-01-06 at 2.48.41 PM.png](PennLINC%20Figure%20Making%20Guide/Screenshot_2026-01-06_at_2.48.41_PM.png)
+![](Screenshot_1.png)
 
 **Additional Tips, Tricks, and Recommendations**
 
