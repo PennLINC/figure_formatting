@@ -154,4 +154,8 @@ Stock images
     - Make sure that you import this figure “from scratch” into InDesign - meaning, don’t just update the link of a previously existing figure. If you do that, the figure gets resized by InDesign (even if you don’t autoscale and fit the frame to content, it doesn’t work).
     - Instead, delete the existing plot in the InDesign page, and re-import the new figure using the “Start with image” → “Import File”. Another option is to simply drag and drop the newly made plot. This will place it in the page with the exact figure dimensions we specified in the Python script.
 - Also, when saving this out, it might throw a warning that a font wasn’t found for some plots in the page. Just click ok and ignore that! It will save just fine.
-- You can reference our PennLINC InDesign and Illustrator [templates](https://github.com/PennLINC/figure_formatting/tree/main/templates) to help lay out your panels:
+- You can reference our PennLINC InDesign and Illustrator [templates](https://github.com/PennLINC/figure_formatting/tree/main/templates) to help lay out your panels.
+
+
+[1] Tufte, E. R., & Graves-Morris, P. R. (1983). The visual display of quantitative information (Vol. 2, No. 9). Cheshire, CT: Graphics press.
+[2] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
