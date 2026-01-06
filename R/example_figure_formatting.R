@@ -70,8 +70,7 @@ fig_setup_multi <- setup_figure(
   width_mm = width_mm,
   height_mm = height_mm,
   nrows = 2,
-  ncols = 2,
-  sharey = sharey
+  ncols = 2
 )
 
 # Create individual plots with different data
