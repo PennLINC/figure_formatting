@@ -145,7 +145,7 @@ Stock images
 
 # HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY:
 
-- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained infigure_formatting.py . Specifically, here’s what it does: 
+- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in `figure_formatting.py` . Specifically, here’s what it does: 
     - takes in predefined final figure size in mm: this is the size you’ve pre-allocated in InDesign for this plot
     - enforces consistent font type and font size, as well as plot size in mm
 - IMPORTANT NOTE:
