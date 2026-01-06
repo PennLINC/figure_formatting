@@ -25,6 +25,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 5. Don’t overcomplicate figures—they are tools for understanding. Every bit of ink requires a reason.
 
 ![](Screenshot_1.png)
+(figures from [2])
 
 **Additional Tips, Tricks, and Recommendations**
 
@@ -36,6 +37,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 
  
 ![](Screenshot_2.png)
+(figures from [2])
  
 1. Use visual variables (color, shape, shade) only to identify data variation
 2. Be consistent with visual variables—e.g., don’t use different colors to represent the same kinds of data. **EXAMPLE:** visual variables can help readers interpret figures when used appropriately.
@@ -43,13 +45,13 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 
 
 ![](Screenshot_3.png)
-(figures from [2])
+(figures from [3])
  
  
 1. Use a page layout to decide if the figure is a 1-column (full page width) figure or a two column (half-page width) figure. **Example:** A full-page width figure.
 
 ![](Screenshot_4.png)
-(figures from [2])
+(figures from [3])
 
 1. Limit the number of fonts and font sizes in the figure. Check journal guidelines and match the figure font to the font the journal prints in.
 2. Most figure-specific changes can be implemented in code, but In Design and/or Illustrator can be helpful for finishing touches.
@@ -159,4 +161,6 @@ Stock images
 
 [1] Tufte, E. R., & Graves-Morris, P. R. (1983). The visual display of quantitative information (Vol. 2, No. 9). Cheshire, CT: Graphics press.
 
-[2] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
+[2] Few, S. (2011). The chartjunk debate: A close examination of recent findings. Visual Business Intelligence Newsletter. Perceptual Edge.
+
+[3] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
