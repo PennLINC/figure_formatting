@@ -53,7 +53,9 @@ Summarized from slides by Golia Shafiei, Ph.D.
 
 1. Limit the number of fonts and font sizes in the figure. Check journal guidelines and match the figure font to the font the journal prints in.
 2. Most figure-specific changes can be implemented in code, but In Design and/or Illustrator can be helpful for finishing touches.
-3. Shared figure-plotting code (**INSERT LINK HERE)** can simplify incorporating these recommendations!
+3. Shared figure-plotting code can simplify incorporating these recommendations!
+   - [R code](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R)
+   - [Python code](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R)
 
 # PENNLINC SPECIFIC GUIDELINES
 
@@ -145,7 +147,7 @@ Stock images
 
 # HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY:
 
-- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in `figure_formatting.py` . Specifically, here’s what it does: 
+- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in [figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R) . Specifically, here’s what it does: 
     - takes in predefined final figure size in mm: this is the size you’ve pre-allocated in InDesign for this plot
     - enforces consistent font type and font size, as well as plot size in mm
 - IMPORTANT NOTE:
