@@ -58,7 +58,7 @@ save_figure(p1, file.path(output_dir, "example_default_font.svg"),
             width_mm = width_mm, height_mm = height_mm)
 
 # ------------------------------------------------------------------------------------------------
-# Example 2: Multipanel figure (2x2 grid) with shared y axis
+# Example 2: Multipanel figure (2x2 grid)
 # ------------------------------------------------------------------------------------------------
 cat("Creating multipanel figure (2x2 grid)...\n")
 
