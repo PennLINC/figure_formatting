@@ -65,7 +65,6 @@ cat("Creating multipanel figure (2x2 grid)...\n")
 # Setup for multipanel figure
 width_mm <- 150
 height_mm <- 100
-sharey <- TRUE
 fig_setup_multi <- setup_figure(
   width_mm = width_mm,
   height_mm = height_mm,
