@@ -54,8 +54,8 @@ Summarized from slides by Golia Shafiei, Ph.D.
 1. Limit the number of fonts and font sizes in the figure. Check journal guidelines and match the figure font to the font the journal prints in.
 2. Most figure-specific changes can be implemented in code, but In Design and/or Illustrator can be helpful for finishing touches.
 3. Shared figure-plotting code can simplify incorporating these recommendations!
-   - [R code](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R)
-   - [Python code](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R)
+   - [R code](https://github.com/PennLINC/figure_formatting/tree/main/R)
+   - [Python code](https://github.com/PennLINC/figure_formatting/tree/main/Python)
 
 # PENNLINC SPECIFIC GUIDELINES
 
@@ -147,11 +147,11 @@ Stock images
 
 # HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY:
 
-- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in [figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R) . Specifically, here’s what it does: 
+- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in [figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R) and [figure_formatting.py](https://github.com/PennLINC/figure_formatting/blob/main/Python/figure_formatting.py). Specifically, here’s what it does: 
     - takes in predefined final figure size in mm: this is the size you’ve pre-allocated in InDesign for this plot
     - enforces consistent font type and font size, as well as plot size in mm
 - IMPORTANT NOTE:
     - Make sure that you import this figure “from scratch” into InDesign - meaning, don’t just update the link of a previously existing figure. If you do that, the figure gets resized by InDesign (even if you don’t autoscale and fit the frame to content, it doesn’t work).
     - Instead, delete the existing plot in the InDesign page, and re-import the new figure using the “Start with image” → “Import File”. Another option is to simply drag and drop the newly made plot. This will place it in the page with the exact figure dimensions we specified in the Python script.
 - Also, when saving this out, it might throw a warning that a font wasn’t found for some plots in the page. Just click ok and ignore that! It will save just fine.
-- You can reference our PennLINC InDesign and Illustrator templates in this repo.
+- You can reference our PennLINC InDesign and Illustrator [templates](https://github.com/PennLINC/figure_formatting/tree/main/templates) to help lay out your panels:
