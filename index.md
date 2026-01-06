@@ -11,7 +11,7 @@ nav_order: 3
 
 # FIGURE DESIGN PRINCIPLES
 
-Summarized from slides by Golia Shafiei, Ph.D.
+Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Display of Quantitative Information" by Edward R. Tufte [1])
 
 - There is no single way to make an effective figure—depends on data type, number audience, analysis, and other factors
 - “Essentially, statistical graphics are instruments to help people reason about quantitative information.” - Edward Tufte
@@ -46,10 +46,13 @@ Summarized from slides by Golia Shafiei, Ph.D.
 > 
 > 
 > ![](Screenshot_3.png)
+>(figures from [2])
+> 
 > 
 1. Use a page layout to decide if the figure is a 1-column (full page width) figure or a two column (half-page width) figure. **Example:** A full-page width figure.
 
 ![](Screenshot_4.png)
+(figures from [2])
 
 1. Limit the number of fonts and font sizes in the figure. Check journal guidelines and match the figure font to the font the journal prints in.
 2. Most figure-specific changes can be implemented in code, but In Design and/or Illustrator can be helpful for finishing touches.
