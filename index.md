@@ -34,21 +34,18 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 2. Avoid pie charts—tables are almost always better
 3. Use *meaningful baseline numbers* for axes to avoid distorting data interpretation. **EXAMPLE:** lack of meaningful baseline numbers on the left.
 
-> 
-> 
-> 
-> ![](Screenshot_2.png)
-> 
+ 
+![](Screenshot_2.png)
+ 
 1. Use visual variables (color, shape, shade) only to identify data variation
 2. Be consistent with visual variables—e.g., don’t use different colors to represent the same kinds of data. **EXAMPLE:** visual variables can help readers interpret figures when used appropriately.
 
-> 
-> 
-> 
-> ![](Screenshot_3.png)
->(figures from [2])
-> 
-> 
+
+
+![](Screenshot_3.png)
+(figures from [2])
+ 
+ 
 1. Use a page layout to decide if the figure is a 1-column (full page width) figure or a two column (half-page width) figure. **Example:** A full-page width figure.
 
 ![](Screenshot_4.png)
