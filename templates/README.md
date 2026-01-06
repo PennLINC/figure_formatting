@@ -1,0 +1,1 @@
+These templates are based off of figure guidelines from Nature branded research journals.
