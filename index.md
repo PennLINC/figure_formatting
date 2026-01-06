@@ -37,7 +37,7 @@ Summarized from slides by Golia Shafiei, Ph.D.
 > 
 > 
 > 
-> ![Screenshot 2026-01-06 at 2.48.59 PM.png](PennLINC%20Figure%20Making%20Guide/Screenshot_2026-01-06_at_2.48.59_PM.png)
+> ![](Screenshot_2.png)
 > 
 1. Use visual variables (color, shape, shade) only to identify data variation
 2. Be consistent with visual variables—e.g., don’t use different colors to represent the same kinds of data. **EXAMPLE:** visual variables can help readers interpret figures when used appropriately.
@@ -45,11 +45,11 @@ Summarized from slides by Golia Shafiei, Ph.D.
 > 
 > 
 > 
-> ![Screenshot 2026-01-06 at 2.49.48 PM.png](PennLINC%20Figure%20Making%20Guide/Screenshot_2026-01-06_at_2.49.48_PM.png)
+> ![](Screenshot_3.png)
 > 
 1. Use a page layout to decide if the figure is a 1-column (full page width) figure or a two column (half-page width) figure. **Example:** A full-page width figure.
 
-![Screenshot 2026-01-06 at 2.49.58 PM.png](PennLINC%20Figure%20Making%20Guide/Screenshot_2026-01-06_at_2.49.58_PM.png)
+![](Screenshot_4.png)
 
 1. Limit the number of fonts and font sizes in the figure. Check journal guidelines and match the figure font to the font the journal prints in.
 2. Most figure-specific changes can be implemented in code, but In Design and/or Illustrator can be helpful for finishing touches.
