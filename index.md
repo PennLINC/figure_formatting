@@ -158,4 +158,5 @@ Stock images
 
 
 [1] Tufte, E. R., & Graves-Morris, P. R. (1983). The visual display of quantitative information (Vol. 2, No. 9). Cheshire, CT: Graphics press.
+
 [2] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
