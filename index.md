@@ -20,7 +20,12 @@ nav_order: 3
   <li><a href="#captions">Captions</a></li>
   <li><a href="#export--file-handling">Export & File Handling</a></li>
   <li><a href="#pre-submission-figure-checklist">Pre-submission Checklist</a></li>
-  <li><a href="#plotting-on-the-brain--surface">Plotting on the Brain</a></li>
+  <li><a href="#plotting-on-the-brain--surface">Plotting on the Brain</a>
+    <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
+    <li><a href="#tools-for-plotting-on-the-brain-surface">Tools for Plotting</a></li>
+    </ul>
+  </li>
+  <li><a href="#resources">Resources</a></li>
   </ul>
 </li>
 <li><a href="#how-to-implement-this-in-a-reproducible-way-figure-formatting-utilities">Figure Formatting Utilities</a>
@@ -103,7 +108,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 
 # PENNLINC SPECIFIC GUIDELINES
 
-**Core visual default parameters**
+## Core visual default parameters**
 
 - **Font:** sans-serif (e.g., Arial/Helvetica). Axis labels should be the same font within and across figures. Check Journal guidelines, which may have font requirements.
 - **Sizes:** title 9–10 pt, axes 8–9 pt, tick labels 7–8 pt, legend 7–8 pt.
@@ -121,28 +126,28 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 - **Legends:** only encode what’s not obvious from labels; never duplicate axis titles.
 - **Ticks:** 3–6 ticks per axis; use human-readable numbers; avoid scientific notation unless unavoidable.
 
-**Statistics**
+## Statistics
 
 - Always report an **estimate + uncertainty** (95% CI or compatible interval).
 - Show **raw or semi-raw data** where feasible (e.g., dotplots/violin with quartiles) rather than only summary bars.
 - **Effect sizes, not just p:** standardized (β, Cohen’s d) or interpretable raw units.
 - **Multiplicity:** if thresholds are shown, specify control (FDR q, FWE α) and the family tested.
 
-**Captions**
+## Captions
 
 - **Approach:** key design/metric/model.
 - Include information about sample, if applicable (what sample/dataset, what is the sample size *n*)
 - **Evidence:** the estimate(s) with CI and n.
 - The figure should be understandable from the figure and its caption alone, without the accompanying text.
 
-**Export & file handling**
+## Export & file handling
 
 - **Preferred format:** vector (PDF/SVG) for line/axis figures. If it must be PNG due to journal or software constraints, save at high resolution (e.g., 300 dpi).
 - **Is it lines/text/shapes?** → Vector (PDF for journals, SVG for web).
 - **Is it an image/brain map/heatmap?** → Raster (PNG/TIFF) at the final print width and appropriate DPI (≈300 dpi for photos/heatmaps, up to 600 dpi for fine details).
 - **Width targets:** prepare at the intended journal column width; check legibility at 85–90 mm (single column) and 180–185 mm (double).
 
-**Pre-submission figure checklist**
+## Pre-submission figure checklist
 
 - One clear claim per figure; panels ordered logically.
 - Axes labeled with units; readable at single-column width.
@@ -151,7 +156,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 - For brain maps: orientation, space, colorbar with labeled endpoints, threshold method stated; coordinates provided.
 - Figure is reproducible from code; output is vector or 300–600 dpi raster; fonts embedded.
 
-**Plotting on the brain / surface**
+## Plotting on the brain / surface
 
 - If you plot cortical data, make sure the midbrain is masked
 - If the data you plot has units, make sure the colorbar limits are meaningful. E.g. if you plot change (delta) and use a binary colormap - make sure the ‘0’ is white / the colormap should be symmetric and diverge around 0
@@ -160,7 +165,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 - If you show 2D slices, include labels (L / R, axial, sagittal etc.)
 - Think about surface inflation - do you want to show effects in sulci and hidden regions like the insula?
 
-**Tools for plotting on the surface**
+### Tools for plotting on the brain surface
 
 *Python*
 
@@ -172,16 +177,16 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 
 - ggseg (https://github.com/ggseg/ggseg)
 
-**RESOURCES**
+## RESOURCES
 
-Colormaps
+*Colormaps*
 
 - Coblis — Color Blindness Simulator: [https://www.color-blindness.com/coblis-color-blindness-simulator/](https://www.color-blindness.com/coblis-color-blindness-simulator/)
 - Crameri / Scientific colormaps: [https://www.fabiocrameri.ch/colourmaps/](https://www.fabiocrameri.ch/colourmaps/)
 - MyColor: [https://mycolor.space/?hex=%23845EC2&sub=1](https://mycolor.space/?hex=%23845EC2&sub=1) (finds matching colormap for one color)
 - Seaborn: [https://seaborn.pydata.org/tutorial/color_palettes.html](https://seaborn.pydata.org/tutorial/color_palettes.html)
 
-Stock images
+*Stock images*
 
 - [unsplash.com](http://unsplash.com/)
 - [pixabay.com](http://pixabay.com/)
