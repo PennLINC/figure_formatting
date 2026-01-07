@@ -47,7 +47,7 @@ nav_order: 3
 </ul>
 </div>
 
-<div style="margin-left: 270px; padding: 20px;" markdown="1">
+<div style="margin-left: 270px; padding: 20px 40px 20px 20px; max-width: calc(100% - 270px);" markdown="1">
 
 # FIGURE DESIGN PRINCIPLES
 
