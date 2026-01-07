@@ -47,7 +47,7 @@ nav_order: 3
 </ul>
 </div>
 
-<div style="margin-left: 270px; padding: 20px 40px 20px 20px; max-width: calc(100% - 270px);" markdown="1">
+<div style="margin-left: 270px; padding: 20px;" markdown="1">
 
 # FIGURE DESIGN PRINCIPLES
 
@@ -419,5 +419,3 @@ If you have any questions or need help troubleshooting, feel free to write in th
 [2] Few, S. (2011). The chartjunk debate: A close examination of recent findings. Visual Business Intelligence Newsletter. Perceptual Edge.
 
 [3] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
-
-</div>
