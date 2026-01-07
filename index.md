@@ -108,7 +108,7 @@ Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Di
 
 # PENNLINC SPECIFIC GUIDELINES
 
-## Core visual default parameters**
+## Core visual default parameters
 
 - **Font:** sans-serif (e.g., Arial/Helvetica). Axis labels should be the same font within and across figures. Check Journal guidelines, which may have font requirements.
 - **Sizes:** title 9–10 pt, axes 8–9 pt, tick labels 7–8 pt, legend 7–8 pt.
