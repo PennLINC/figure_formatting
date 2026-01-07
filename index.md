@@ -47,8 +47,6 @@ nav_order: 3
 </ul>
 </div>
 
-<div style="margin-left: 270px; padding: 20px;" markdown="1">
-
 # FIGURE DESIGN PRINCIPLES
 
 Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Display of Quantitative Information" by Edward R. Tufte [1])
