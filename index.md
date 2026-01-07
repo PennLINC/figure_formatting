@@ -47,6 +47,10 @@ nav_order: 3
 </ul>
 </div>
 
+In this tutorial, we'll go over some general figure design principles, then outline more specific guidelines for PennLINC. To make it convenient, reproducible and easy, we also go over a workflow and readily available scripts that can format all your plots (along with font type and size) automatically for you in Python and R. 
+
+Let's dive in!
+
 # FIGURE DESIGN PRINCIPLES
 
 Summarized from slides by Golia Shafiei, Ph.D. (based on the book "The Visual Display of Quantitative Information" by Edward R. Tufte [1])
