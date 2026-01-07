@@ -3,11 +3,47 @@ layout: default
 title: PennLINC Figure-Making Guide
 parent: Documentation
 has_children: false
-has_toc: false
+has_toc: true
 nav_order: 3
 ---
 
 # PennLINC Figure Making Guide
+
+<div class="toc-wrapper" style="float: right; margin: 0 0 20px 20px; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; max-width: 300px; position: sticky; top: 20px;">
+<strong>Table of Contents</strong>
+<ul style="list-style: none; padding-left: 20px; margin: 10px 0;">
+<li><a href="#figure-design-principles">Figure Design Principles</a></li>
+<li><a href="#pennlinc-specific-guidelines">PennLINC Specific Guidelines</a>
+  <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
+  <li><a href="#core-visual-default-parameters">Core Visual Parameters</a></li>
+  <li><a href="#statistics">Statistics</a></li>
+  <li><a href="#captions">Captions</a></li>
+  <li><a href="#export--file-handling">Export & File Handling</a></li>
+  <li><a href="#pre-submission-figure-checklist">Pre-submission Checklist</a></li>
+  <li><a href="#plotting-on-the-brain--surface">Plotting on the Brain</a></li>
+  </ul>
+</li>
+<li><a href="#how-to-implement-this-in-a-reproducible-way-figure-formatting-utilities">Figure Formatting Utilities</a>
+  <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
+  <li><a href="#key-features">Key Features</a></li>
+  <li><a href="#requirements">Requirements</a></li>
+  <li><a href="#workflow">Workflow</a>
+    <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
+    <li><a href="#1-create-a-figure-layout">1. Create a figure layout</a></li>
+    <li><a href="#2-generate-figures">2. Generate figures</a>
+      <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
+      <li><a href="#python-">Python</a></li>
+      <li><a href="#r-">R</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-load-the-plot-into-the-figure-layout">3. Load the plot</a></li>
+    </ul>
+  </li>
+  </ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
 
 # FIGURE DESIGN PRINCIPLES
 
@@ -147,17 +183,220 @@ Stock images
 - Adobe Stock (with standard license)
 
 
-# HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY:
+# HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY: FIGURE FORMATTING UTILITIES
 
 - Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in [figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R) and [figure_formatting.py](https://github.com/PennLINC/figure_formatting/blob/main/Python/figure_formatting.py). Specifically, here’s what it does: 
     - takes in predefined final figure size in mm: this is the size you’ve pre-allocated in InDesign for this plot
     - enforces consistent font type and font size, as well as plot size in mm
-- IMPORTANT NOTE:
-    - Make sure that you import this figure “from scratch” into InDesign - meaning, don’t just update the link of a previously existing figure. If you do that, the figure gets resized by InDesign (even if you don’t autoscale and fit the frame to content, it doesn’t work).
-    - Instead, delete the existing plot in the InDesign page, and re-import the new figure using the “Start with image” → “Import File”. Another option is to simply drag and drop the newly made plot. This will place it in the page with the exact figure dimensions we specified in the Python script.
 - Also, when saving this out, it might throw a warning that a font wasn’t found for some plots in the page. Just click ok and ignore that! It will save just fine.
 - You can reference our PennLINC InDesign and Illustrator [templates](https://github.com/PennLINC/figure_formatting/tree/main/templates) to help lay out your panels.
 
+
+
+
+
+The figure formatting repository contains scripts for creating figures with exact physical dimensions in R and Python. Specifically, the repo contains the following: 
+
+- **Python folder**: 
+    - `figure_formatting.py`: contains the main functions for creating (`setup_figure`) and saving (`save_figure`). 
+    - `example_figure_formatting.py`: contains a few examples illustrating how to use these functions when creating your figures in Python. 
+- **R folder**: 
+    - - `figure_formatting.R`: same functions as above but in R. 
+    - `example_figure_formatting.py`: examples illustrating how to use these functions when creating your figures in R. 
+
+
+## Key Features
+
+- **Exact physical size**: Based on your planned figure layout in InDesign, Illustrator or Inkscape, you can specify the desired figure dimensions in millimeters using the `setup_figure` function. The saved figure will match exactly!
+- **Consistent styling**: Besides specific figure dimensions, the key functionality of setup_figure is that it applies specified font sizes, line widths, and styling across all figures - while still enforcing figure dimensions. 
+- **Multipanel support**: Both Python and R functions support creating multipanel (aka grid) figures with specified final dimensions. In Python, this is handled internally by the `setup_figure` function. In R, this can be done after initiating the figure (with `setup_figure`), using `cowplot::plot_grid()`.
+
+## Requirements
+
+In Python:
+
+- `matplotlib`
+
+Install with:
+
+```bash
+pip install matplotlib
+```
+
+In R: 
+
+- `ggplot2`
+- `cowplot`
+
+Install with:
+
+```r
+install.packages(c("ggplot2", "cowplot"))
+```
+
+## Workflow
+
+Let's say you've conducted your main analyses and have some key result plots in hand. It's now time to format them for a manuscript submission! Below are a few easy steps to follow when formatting figures for manuscripts. 
+
+
+### 1. Create a figure layout
+
+The best way to approach this is to start by outlining the layout of your multipanel figure in your preferred software tool (InDesign, Illustrator, Inkscape, etc.). When creating this layout, be sure to check the figure guidelines of the journal where you're planning to submit the paper. In this tutorial, we'll work with the Nature portfolio guidelines ([found here](https://www.nature.com/documents/NRJs-guide-to-preparing-final-artwork.pdf)). A multipanel figure layout might look something like this: 
+
+![](Screenshot_5.png)
+
+✨ For convenience, the repo contains templates for multipanel figures:
+
+- InDesign template
+- Illustrator template
+
+You can download these [here](https://github.com/PennLINC/figure_formatting/tree/main/templates). 
+
+**Note**: make sure to set/switch the page dimension units to millimeters; this is because journals most often specify their requirements in mm, and will be convenient when generating figures below. To do this, right-click on the rulers and set them to mm. 
+
+
+### 2. Generate figures
+
+Next, for each plot within the layout you just created, note the figure dimensions in millimeters. For example, let's say we have a scatterplot we'd like to output with a width of 80mm, and a height of 60mm. 
+
+Go back to the script that generates your plot and use the figure formatting and saving functions to generate the plot in these specific dimensions. 
+
+**Note**: the examples below are for single plots. For plot grids and more examples, see [example_figure_formatting.py](https://github.com/PennLINC/figure_formatting/blob/main/Python/example_figure_formatting.py) and [example_figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/example_figure_formatting.R).
+
+#### Python 🐍
+
+Here's what that might look like in Python.
+
+First, add `figure_formatting.py` to your Python path. You have two options:
+
+1. **Clone the repository:**
+   ```bash
+   cd /path/to/your/scripts
+   git clone https://github.com/PennLINC/figure_formatting.git
+   ```
+   This will create a `figure_formatting` directory in your current location.
+
+2. **Download the script directly:**
+   - Download `Python/figure_formatting.py` from the [GitHub repository](https://github.com/PennLINC/figure_formatting/tree/main/Python)
+   - Place it in your workspace directory (or a subdirectory)
+
+Then, in your Python script that generates the result plot (in your workspace directory), import the functions:
+
+```python
+import sys
+from pathlib import Path
+
+# Add the directory containing figure_formatting.py to your path
+# Option 1: If you cloned the repo to a sibling directory
+sys.path.insert(0, str(Path(__file__).parent.parent / "figure_formatting" / "Python"))
+
+# Option 2: If you downloaded figure_formatting.py to your workspace directory
+sys.path.insert(0, str(Path(__file__).parent))  # if in same directory
+
+# Option 3: If you placed it in a specific location, use the full path:
+sys.path.insert(0, "/path/to/directory/containing/figure_formatting.py")
+
+from figure_formatting import setup_figure, save_figure
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+Finally, use the figure formatting functions to generate your plot in the desired dimensions: 
+
+```python
+# First, initiate your figure with specified dimensions
+# Default font: Helvetica, 7pt (can be customized with base_pt, label_pt, title_pt, sans_list parameters)
+fig, ax = setup_figure(width_mm=80, height_mm=60, 
+  margins_mm=(1, 1, 1, 1)) # optional, add some margins if you want more white space around the plot
+
+# Then generate your plot (simulated scatterplot here)
+x = np.random.randn(100)
+y = np.random.randn(100)
+ax.scatter(x, y, s=20, alpha=0.6)
+ax.set_xlabel('X axis label')
+ax.set_ylabel('Y axis label')
+ax.set_title('My Plot')
+
+# Save with exact dimensions
+save_figure(fig, 'my_plot.svg')
+plt.close(fig)
+```
+
+
+#### R 🦁
+
+Here's what this might look like in R.
+
+First, add `figure_formatting.R` to your R path. You have two options:
+
+1. **Clone the repository:**
+   ```bash
+   cd /path/to/your/scripts
+   git clone https://github.com/PennLINC/figure_formatting.git
+   ```
+   This will create a `figure_formatting` directory in your current location.
+
+2. **Download the script directly:**
+   - Download `R/figure_formatting.R` from the [GitHub repository](https://github.com/PennLINC/figure_formatting/tree/main/R)
+   - Place it in your workspace directory (or a subdirectory)
+
+Then, in your R script that generates the result plot (in your workspace directory), source the functions:
+
+```r
+# Add the directory containing figure_formatting.R to your path
+# Option 1: If you cloned the repo to a sibling directory
+source("../figure_formatting/R/figure_formatting.R")
+
+# Option 2: If you downloaded figure_formatting.R to your workspace directory
+source("figure_formatting.R")  # if in same directory
+
+# Option 3: If you placed it in a specific location, use the full path:
+source("/path/to/directory/figure_formatting.R")
+
+library(ggplot2)
+```
+
+Finally, use the figure formatting functions to generate your plot in the desired dimensions:
+
+```r
+# First, initiate your figure with specified dimensions
+# Default font: Arial (sans-serif), 7pt (can be customized with base_pt, label_pt, title_pt, font_type parameters)
+width = 80
+height = 60
+fig_setup <- setup_figure(width_mm = width, height_mm = height)
+
+# Then generate your plot (simulated scatterplot here)
+set.seed(42)
+data <- data.frame(
+  x = rnorm(100),
+  y = rnorm(100)
+)
+p <- ggplot(data, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.6) +
+  labs(x = "X axis label", y = "Y axis label", title = "My Plot") +
+  fig_setup$theme_obj # this applies the figure formatting 
+
+# Save with exact dimensions
+save_figure(p, "my_plot.svg", width_mm = width, height_mm = height)
+
+```
+
+### 3. Load the plot into the figure layout
+
+The last step is just to load your plot file (e.g., svg or other; can also be brain pngs for example) into the figure layout from InDesign (or other). To do this in InDesign, simply select the rectangle frame you prepared for this plot: 
+
+![](Screenshot_6.png)
+
+Next, import the plot file - et voilà!
+
+![](Screenshot_7.png)
+
+
+And then just use these formatting functions for the rest of your plots! 😊
+
+
+
+# REFERENCES
 
 [1] Tufte, E. R., & Graves-Morris, P. R. (1983). The visual display of quantitative information (Vol. 2, No. 9). Cheshire, CT: Graphics press.
 
