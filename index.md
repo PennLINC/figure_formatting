@@ -9,7 +9,7 @@ nav_order: 3
 
 # PennLINC Figure Making Guide
 
-<div class="toc-wrapper" style="float: right; margin: 0 0 20px 20px; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; max-width: 300px; position: sticky; top: 20px;">
+<div class="toc-wrapper" style="margin: 0 0 30px 0; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; max-width: 100%; width: fit-content;">
 <strong>Table of Contents</strong>
 <ul style="list-style: none; padding-left: 20px; margin: 10px 0;">
 <li><a href="#figure-design-principles">Figure Design Principles</a></li>
@@ -25,7 +25,8 @@ nav_order: 3
 </li>
 <li><a href="#how-to-implement-this-in-a-reproducible-way-figure-formatting-utilities">Figure Formatting Utilities</a>
   <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
-  <li><a href="#key-features">Key Features</a></li>
+  <li><a href="#the-problem">The Problem</a></li>
+  <li><a href="#the-solution">The Solution</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#workflow">Workflow</a>
     <ul style="list-style: none; padding-left: 15px; margin: 5px 0;">
@@ -41,6 +42,7 @@ nav_order: 3
   </li>
   </ul>
 </li>
+<li><a href="#questions-and-troubleshooting">Questions and Troubleshooting</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -185,31 +187,32 @@ Stock images
 
 # HOW TO IMPLEMENT THIS IN A REPRODUCIBLE WAY: FIGURE FORMATTING UTILITIES
 
-- Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. These functions are contained in [figure_formatting.R](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R) and [figure_formatting.py](https://github.com/PennLINC/figure_formatting/blob/main/Python/figure_formatting.py). Specifically, here’s what it does: 
-    - takes in predefined final figure size in mm: this is the size you’ve pre-allocated in InDesign for this plot
-    - enforces consistent font type and font size, as well as plot size in mm
-- Also, when saving this out, it might throw a warning that a font wasn’t found for some plots in the page. Just click ok and ignore that! It will save just fine.
-- You can reference our PennLINC InDesign and Illustrator [templates](https://github.com/PennLINC/figure_formatting/tree/main/templates) to help lay out your panels.
+## The problem
 
+Pretty much all researchers will face it at some point: you need to create a multipanel figure for a manuscript. In doing so, you might first generate various plots that you then import into a software tool like InDesign or Illustrator. This is especially true when your panels aren’t all aligned, or contain various file types: maybe some are svg files containing graphs, some are png files containing brain images, etc. 
 
+In the process of creating this multipanel figure, you typically end up needing to resize and adjust so that all panels are arranged the way you want. However, this process also rescales the font size of the plots, leading to **panels with inconsistent font sizes** (yikes!). 
 
+This means you then need to manually tweak font sizes after the fact in InDesign (or Illustrator), or do a lot of trial and error when specifying plot sizes in Python or R to finally get a plot that has the right font size when imported into InDesign — not ideal  🫠.
 
+## The solution
 
-The figure formatting repository contains scripts for creating figures with exact physical dimensions in R and Python. Specifically, the repo contains the following: 
+Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. Specifically, here’s what it does: 
 
-- **Python folder**: 
-    - `figure_formatting.py`: contains the main functions for creating (`setup_figure`) and saving (`save_figure`). 
-    - `example_figure_formatting.py`: contains a few examples illustrating how to use these functions when creating your figures in Python. 
-- **R folder**: 
-    - - `figure_formatting.R`: same functions as above but in R. 
-    - `example_figure_formatting.py`: examples illustrating how to use these functions when creating your figures in R. 
-
-
-## Key Features
-
-- **Exact physical size**: Based on your planned figure layout in InDesign, Illustrator or Inkscape, you can specify the desired figure dimensions in millimeters using the `setup_figure` function. The saved figure will match exactly!
+- **Exact figure dimensions**: Based on your planned figure layout in InDesign, Illustrator or Inkscape, you can specify the desired figure dimensions in millimeters using the `setup_figure` function. The saved figure will match exactly!
 - **Consistent styling**: Besides specific figure dimensions, the key functionality of setup_figure is that it applies specified font sizes, line widths, and styling across all figures - while still enforcing figure dimensions. 
 - **Multipanel support**: Both Python and R functions support creating multipanel (aka grid) figures with specified final dimensions. In Python, this is handled internally by the `setup_figure` function. In R, this can be done after initiating the figure (with `setup_figure`), using `cowplot::plot_grid()`.
+
+
+The [figure formatting repository](https://github.com/PennLINC/figure_formatting) contains scripts for creating figures with exact physical dimensions in R and Python. Specifically, the repo contains the following: 
+
+- **Python folder**: 
+    - [`figure_formatting.py`](https://github.com/PennLINC/figure_formatting/blob/main/Python/figure_formatting.py): contains the main functions for creating (`setup_figure`) and saving (`save_figure`). 
+    - [`example_figure_formatting.py`](https://github.com/PennLINC/figure_formatting/blob/main/Python/example_figure_formatting.py): contains a few examples illustrating how to use these functions when creating your figures in Python. 
+- **R folder**: 
+    - [`figure_formatting.R`](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R): same functions as above but in R. 
+    - [`example_figure_formatting.py`](https://github.com/PennLINC/figure_formatting/blob/main/R/example_figure_formatting.R): examples illustrating how to use these functions when creating your figures in R. 
+
 
 ## Requirements
 
@@ -253,6 +256,9 @@ The best way to approach this is to start by outlining the layout of your multip
 You can download these [here](https://github.com/PennLINC/figure_formatting/tree/main/templates). 
 
 **Note**: make sure to set/switch the page dimension units to millimeters; this is because journals most often specify their requirements in mm, and will be convenient when generating figures below. To do this, right-click on the rulers and set them to mm. 
+
+
+**Note**: check out [this tutorial](https://pennlinc.github.io/docs/Tutorials/InDesign_Tutorial/) for more detailed information on how to create multipanel figure layouts in InDesign!
 
 
 ### 2. Generate figures
@@ -387,13 +393,20 @@ The last step is just to load your plot file (e.g., svg or other; can also be br
 
 ![](Screenshot_6.png)
 
-Next, import the plot file - et voilà!
+Next, import the plot file - et voilà! The figure will have the exact dimensions you've specified.
 
 ![](Screenshot_7.png)
 
+An additional nice feature here is that InDesign will automatically remember the path to this file, and will update the plot whenever you regenerate it in R/Python. 
 
-And then just use these formatting functions for the rest of your plots! 😊
+Then just use these formatting functions for the rest of your plots! 😊
 
+**Note**: when saving the multipanel figure you created in InDesign, it might throw a warning that a font wasn’t found for some plots in the page. Just click ok and ignore that! It will save just fine.
+
+
+# QUESTIONS AND TROUBLESHOOTING
+
+If you have any questions or need help troubleshooting, feel free to write in the #pennlinc_docs channel on Slack!
 
 
 # REFERENCES
