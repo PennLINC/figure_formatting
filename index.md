@@ -9,7 +9,8 @@ nav_order: 3
 
 # PennLINC Figure Making Guide
 
-<div class="toc-wrapper" style="margin: 0 0 30px 0; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; max-width: 100%; width: fit-content;">
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+<div class="toc-wrapper" style="flex: 0 0 300px; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; position: sticky; top: 20px;">
 <strong>Table of Contents</strong>
 <ul style="list-style: none; padding-left: 20px; margin: 10px 0;">
 <li><a href="#figure-design-principles">Figure Design Principles</a></li>
@@ -46,6 +47,8 @@ nav_order: 3
 <li><a href="#references">References</a></li>
 </ul>
 </div>
+
+<div style="flex: 1; min-width: 0;">
 
 # FIGURE DESIGN PRINCIPLES
 
@@ -197,12 +200,7 @@ This means you then need to manually tweak font sizes after the fact in InDesign
 
 ## The solution
 
-Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. Specifically, here’s what it does: 
-
-- **Exact figure dimensions**: Based on your planned figure layout in InDesign, Illustrator or Inkscape, you can specify the desired figure dimensions in millimeters using the `setup_figure` function. The saved figure will match exactly!
-- **Consistent styling**: Besides specific figure dimensions, the key functionality of setup_figure is that it applies specified font sizes, line widths, and styling across all figures - while still enforcing figure dimensions. 
-- **Multipanel support**: Both Python and R functions support creating multipanel (aka grid) figures with specified final dimensions. In Python, this is handled internally by the `setup_figure` function. In R, this can be done after initiating the figure (with `setup_figure`), using `cowplot::plot_grid()`.
-
+Rather than manual tweaking or guessing figure sizes over and over, we can use a few functions that will enforce figure formatting for us. 
 
 The [figure formatting repository](https://github.com/PennLINC/figure_formatting) contains scripts for creating figures with exact physical dimensions in R and Python. Specifically, the repo contains the following: 
 
@@ -212,6 +210,12 @@ The [figure formatting repository](https://github.com/PennLINC/figure_formatting
 - **R folder**: 
     - [`figure_formatting.R`](https://github.com/PennLINC/figure_formatting/blob/main/R/figure_formatting.R): same functions as above but in R. 
     - [`example_figure_formatting.py`](https://github.com/PennLINC/figure_formatting/blob/main/R/example_figure_formatting.R): examples illustrating how to use these functions when creating your figures in R. 
+
+Specifically, here’s what the functions do: 
+
+- **Exact figure dimensions**: Based on your planned figure layout in InDesign, Illustrator or Inkscape, you can specify the desired figure dimensions in millimeters using the `setup_figure` function. The saved figure will match exactly!
+- **Consistent styling**: Besides specific figure dimensions, the key functionality of setup_figure is that it applies specified font sizes, line widths, and styling across all figures - while still enforcing figure dimensions. 
+- **Multipanel support**: Both Python and R functions support creating multipanel (aka grid) figures with specified final dimensions. In Python, this is handled internally by the `setup_figure` function. In R, this can be done after initiating the figure (with `setup_figure`), using `cowplot::plot_grid()`.
 
 
 ## Requirements
@@ -416,3 +420,6 @@ If you have any questions or need help troubleshooting, feel free to write in th
 [2] Few, S. (2011). The chartjunk debate: A close examination of recent findings. Visual Business Intelligence Newsletter. Perceptual Edge.
 
 [3] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
+
+</div>
+</div>
