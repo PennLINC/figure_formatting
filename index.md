@@ -9,8 +9,7 @@ nav_order: 3
 
 # PennLINC Figure Making Guide
 
-<div style="display: flex; gap: 20px; align-items: flex-start;">
-<div class="toc-wrapper" style="flex: 0 0 300px; padding: 15px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; position: sticky; top: 20px;">
+<div class="toc-wrapper" style="position: fixed; left: 0; top: 0; width: 250px; height: 100vh; overflow-y: auto; padding: 20px; background: #f5f5f5; border-right: 1px solid #ddd; z-index: 1000;">
 <strong>Table of Contents</strong>
 <ul style="list-style: none; padding-left: 20px; margin: 10px 0;">
 <li><a href="#figure-design-principles">Figure Design Principles</a></li>
@@ -48,7 +47,7 @@ nav_order: 3
 </ul>
 </div>
 
-<div style="flex: 1; min-width: 0;">
+<div style="margin-left: 270px; padding: 20px;">
 
 # FIGURE DESIGN PRINCIPLES
 
@@ -421,5 +420,4 @@ If you have any questions or need help troubleshooting, feel free to write in th
 
 [3] Shafiei, G., Fulcher, B. D., Voytek, B., Satterthwaite, T. D., Baillet, S., & Misic, B. (2023). Neurophysiological signatures of cortical micro-architecture. Nature communications, 14(1), 6000.
 
-</div>
 </div>
